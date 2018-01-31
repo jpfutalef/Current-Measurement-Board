@@ -2914,7 +2914,7 @@ END GROUP
                 0x0000000000000000                ccmram_length = DEFINED (ccmram_len)?ccmram_len:0x0
                 0x0000000000000000                _boot_offset = DEFINED (_rom_offset)?_rom_offset:0x0
 
-.text           0x0000000008000000     0x3228
+.text           0x0000000008000000     0x335c
                 0x0000000008000000                . = ALIGN (0x4)
                 0x0000000008000000                _sfixed = .
                 0x0000000008000000                _isr_vectors = DEFINED (_isr_vectors)?_isr_vectors:.
@@ -3181,244 +3181,243 @@ END GROUP
                 0x000000000800109c       0x60 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
                 0x000000000800109c                adc_lines_init
  .text.startup.main
-                0x00000000080010fc       0xcc /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
+                0x00000000080010fc      0x110 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
                 0x00000000080010fc                main
  .text.auto_init
-                0x00000000080011c8        0x8 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/auto_init.a(auto_init.o)
-                0x00000000080011c8                auto_init
+                0x000000000800120c        0x8 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/auto_init.a(auto_init.o)
+                0x000000000800120c                auto_init
  .text._mutex_lock
-                0x00000000080011d0       0x60 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(mutex.o)
-                0x00000000080011d0                _mutex_lock
+                0x0000000008001214       0x60 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(mutex.o)
+                0x0000000008001214                _mutex_lock
  .text.mutex_unlock
-                0x0000000008001230       0x48 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(mutex.o)
-                0x0000000008001230                mutex_unlock
+                0x0000000008001274       0x48 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(mutex.o)
+                0x0000000008001274                mutex_unlock
  .text.cortexm_init
-                0x0000000008001278       0x70 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cortexm_common.a(cortexm_init.o)
-                0x0000000008001278                cortexm_init
- .text.prep     0x00000000080012e8       0x1c /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
+                0x00000000080012bc       0x70 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cortexm_common.a(cortexm_init.o)
+                0x00000000080012bc                cortexm_init
+ .text.prep     0x000000000800132c       0x1c /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
  .text.adc_init
-                0x0000000008001304       0x6c /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
-                0x0000000008001304                adc_init
+                0x0000000008001348       0x6c /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
+                0x0000000008001348                adc_init
  .text.adc_sample
-                0x0000000008001370      0x108 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
-                0x0000000008001370                adc_sample
- .text          0x0000000008001478       0x14 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_thumb1_case_uqi.o)
-                0x0000000008001478                __gnu_thumb1_case_uqi
- .text          0x000000000800148c      0x120 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_udivsi3.o)
-                0x000000000800148c                __udivsi3
-                0x000000000800148c                __aeabi_uidiv
-                0x0000000008001598                __aeabi_uidivmod
- .text          0x00000000080015ac        0x4 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
-                0x00000000080015ac                __aeabi_ldiv0
-                0x00000000080015ac                __aeabi_idiv0
- .text          0x00000000080015b0       0x7c /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
-                0x00000000080015b0                __aeabi_cdrcmple
-                0x00000000080015c0                __aeabi_cdcmple
-                0x00000000080015c0                __aeabi_cdcmpeq
-                0x00000000080015d0                __aeabi_dcmpeq
-                0x00000000080015dc                __aeabi_dcmplt
-                0x00000000080015f0                __aeabi_dcmple
-                0x0000000008001604                __aeabi_dcmpgt
-                0x0000000008001618                __aeabi_dcmpge
- .text          0x000000000800162c       0x88 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
-                0x000000000800162c                __eqdf2
-                0x000000000800162c                __nedf2
- .text          0x00000000080016b4       0xe0 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
-                0x00000000080016b4                __gtdf2
-                0x00000000080016b4                __gedf2
- .text          0x0000000008001794       0xcc /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
-                0x0000000008001794                __ltdf2
-                0x0000000008001794                __ledf2
- .text          0x0000000008001860      0x534 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
-                0x0000000008001860                __aeabi_dmul
- .text          0x0000000008001d94       0x78 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
-                0x0000000008001d94                __aeabi_i2d
- .text          0x0000000008001e0c       0x64 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatunsidf.o)
-                0x0000000008001e0c                __aeabi_ui2d
- .text          0x0000000008001e70       0x3c /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
-                0x0000000008001e70                __clzsi2
+                0x00000000080013b4      0x108 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
+                0x00000000080013b4                adc_sample
+ .text          0x00000000080014bc       0x14 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_thumb1_case_uqi.o)
+                0x00000000080014bc                __gnu_thumb1_case_uqi
+ .text          0x00000000080014d0      0x120 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_udivsi3.o)
+                0x00000000080014d0                __udivsi3
+                0x00000000080014d0                __aeabi_uidiv
+                0x00000000080015dc                __aeabi_uidivmod
+ .text          0x00000000080015f0        0x4 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x00000000080015f0                __aeabi_ldiv0
+                0x00000000080015f0                __aeabi_idiv0
+ .text          0x00000000080015f4       0x7c /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+                0x00000000080015f4                __aeabi_cdrcmple
+                0x0000000008001604                __aeabi_cdcmple
+                0x0000000008001604                __aeabi_cdcmpeq
+                0x0000000008001614                __aeabi_dcmpeq
+                0x0000000008001620                __aeabi_dcmplt
+                0x0000000008001634                __aeabi_dcmple
+                0x0000000008001648                __aeabi_dcmpgt
+                0x000000000800165c                __aeabi_dcmpge
+ .text          0x0000000008001670       0x88 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+                0x0000000008001670                __eqdf2
+                0x0000000008001670                __nedf2
+ .text          0x00000000080016f8       0xe0 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+                0x00000000080016f8                __gtdf2
+                0x00000000080016f8                __gedf2
+ .text          0x00000000080017d8       0xcc /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
+                0x00000000080017d8                __ltdf2
+                0x00000000080017d8                __ledf2
+ .text          0x00000000080018a4      0x534 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+                0x00000000080018a4                __aeabi_dmul
+ .text          0x0000000008001dd8       0x78 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+                0x0000000008001dd8                __aeabi_i2d
+ .text          0x0000000008001e50       0x64 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatunsidf.o)
+                0x0000000008001e50                __aeabi_ui2d
+ .text          0x0000000008001eb4       0x3c /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+                0x0000000008001eb4                __clzsi2
  .text.__libc_init_array
-                0x0000000008001eac       0x4c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
-                0x0000000008001eac                __libc_init_array
- .text.memset   0x0000000008001ef8       0x10 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
-                0x0000000008001ef8                memset
- .text.printf   0x0000000008001f08       0x34 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
-                0x0000000008001f08                printf
-                0x0000000008001f08                iprintf
- .text._puts_r  0x0000000008001f3c       0xf8 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-puts.o)
-                0x0000000008001f3c                _puts_r
- .text.puts     0x0000000008002034       0x14 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-puts.o)
-                0x0000000008002034                puts
+                0x0000000008001ef0       0x4c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
+                0x0000000008001ef0                __libc_init_array
+ .text.memset   0x0000000008001f3c       0x10 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
+                0x0000000008001f3c                memset
+ .text.printf   0x0000000008001f4c       0x34 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
+                0x0000000008001f4c                printf
+                0x0000000008001f4c                iprintf
+ .text._puts_r  0x0000000008001f80       0xf8 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-puts.o)
+                0x0000000008001f80                _puts_r
+ .text.puts     0x0000000008002078       0x14 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-puts.o)
+                0x0000000008002078                puts
  .text.__swbuf_r
-                0x0000000008002048       0xb0 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
-                0x0000000008002048                __swbuf_r
+                0x000000000800208c       0xb0 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
+                0x000000000800208c                __swbuf_r
  .text.__swsetup_r
-                0x00000000080020f8       0xe8 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
-                0x00000000080020f8                __swsetup_r
+                0x000000000800213c       0xe8 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
+                0x000000000800213c                __swsetup_r
  .text.__sflush_r
-                0x00000000080021e0      0x112 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
-                0x00000000080021e0                __sflush_r
- *fill*         0x00000000080022f2        0x2 
+                0x0000000008002224      0x112 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x0000000008002224                __sflush_r
+ *fill*         0x0000000008002336        0x2 
  .text._fflush_r
-                0x00000000080022f4       0x58 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
-                0x00000000080022f4                _fflush_r
+                0x0000000008002338       0x58 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x0000000008002338                _fflush_r
  .text._cleanup_r
-                0x000000000800234c       0x10 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x000000000800234c                _cleanup_r
+                0x0000000008002390       0x10 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008002390                _cleanup_r
  .text.std.isra.0
-                0x000000000800235c       0x48 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00000000080023a0       0x48 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
  .text.__sfmoreglue
-                0x00000000080023a4       0x2c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00000000080023a4                __sfmoreglue
- .text.__sinit  0x00000000080023d0       0x64 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00000000080023d0                __sinit
- .text.__sfp    0x0000000008002434       0x7c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x0000000008002434                __sfp
+                0x00000000080023e8       0x2c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00000000080023e8                __sfmoreglue
+ .text.__sinit  0x0000000008002414       0x64 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008002414                __sinit
+ .text.__sfp    0x0000000008002478       0x7c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008002478                __sfp
  .text._fwalk_reent
-                0x00000000080024b0       0x42 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
-                0x00000000080024b0                _fwalk_reent
- *fill*         0x00000000080024f2        0x2 
+                0x00000000080024f4       0x42 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
+                0x00000000080024f4                _fwalk_reent
+ *fill*         0x0000000008002536        0x2 
  .text.__smakebuf_r
-                0x00000000080024f4       0xb0 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
-                0x00000000080024f4                __smakebuf_r
- .text._free_r  0x00000000080025a4       0x8c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
-                0x00000000080025a4                _free_r
+                0x0000000008002538       0xb0 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+                0x0000000008002538                __smakebuf_r
+ .text._free_r  0x00000000080025e8       0x8c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+                0x00000000080025e8                _free_r
  .text._malloc_r
-                0x0000000008002630       0xb0 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000008002630                _malloc_r
+                0x0000000008002674       0xb0 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000008002674                _malloc_r
  .text.__sfputc_r
-                0x00000000080026e0       0x2a /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000008002724       0x2a /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x000000000800270a       0x24 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x000000000800270a                __sfputs_r
- *fill*         0x000000000800272e        0x2 
+                0x000000000800274e       0x24 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000000800274e                __sfputs_r
+ *fill*         0x0000000008002772        0x2 
  .text._vfprintf_r
-                0x0000000008002730      0x220 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x0000000008002730                _vfiprintf_r
-                0x0000000008002730                _vfprintf_r
+                0x0000000008002774      0x220 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000008002774                _vfiprintf_r
+                0x0000000008002774                _vfprintf_r
  .text._printf_common
-                0x0000000008002950       0xdc /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008002950                _printf_common
+                0x0000000008002994       0xdc /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008002994                _printf_common
  .text._printf_i
-                0x0000000008002a2c      0x230 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008002a2c                _printf_i
- .text.__sread  0x0000000008002c5c       0x28 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x0000000008002c5c                __sread
+                0x0000000008002a70      0x230 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008002a70                _printf_i
+ .text.__sread  0x0000000008002ca0       0x28 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x0000000008002ca0                __sread
  .text.__swrite
-                0x0000000008002c84       0x38 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x0000000008002c84                __swrite
- .text.__sseek  0x0000000008002cbc       0x2c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x0000000008002cbc                __sseek
+                0x0000000008002cc8       0x38 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x0000000008002cc8                __swrite
+ .text.__sseek  0x0000000008002d00       0x2c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x0000000008002d00                __sseek
  .text.__sclose
-                0x0000000008002ce8        0xc /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x0000000008002ce8                __sclose
- .text.memchr   0x0000000008002cf4       0x16 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr.o)
-                0x0000000008002cf4                memchr
+                0x0000000008002d2c        0xc /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x0000000008002d2c                __sclose
+ .text.memchr   0x0000000008002d38       0x16 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr.o)
+                0x0000000008002d38                memchr
  *(.glue_7t)
- .glue_7t       0x0000000008002d0a        0x0 linker stubs
+ .glue_7t       0x0000000008002d4e        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000008002d0a        0x0 linker stubs
+ .glue_7        0x0000000008002d4e        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
  .rodata.MultiplyDeBruijnBitPosition
-                0x0000000008002d0a       0x20 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(bitarithm.o)
-                0x0000000008002d0a                MultiplyDeBruijnBitPosition
+                0x0000000008002d4e       0x20 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(bitarithm.o)
+                0x0000000008002d4e                MultiplyDeBruijnBitPosition
  .rodata.str1.1
-                0x0000000008002d2a      0x1a5 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cortexm_common.a(vectors_cortexm.o)
+                0x0000000008002d6e      0x1a5 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cortexm_common.a(vectors_cortexm.o)
  .rodata.assert_crash_message
-                0x0000000008002ecf       0x12 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(panic.o)
-                0x0000000008002ecf                assert_crash_message
+                0x0000000008002f13       0x12 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(panic.o)
+                0x0000000008002f13                assert_crash_message
  .rodata.str1.1
-                0x0000000008002ee1       0x2e /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(panic.o)
+                0x0000000008002f25       0x2e /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(panic.o)
  .rodata.str1.1
-                0x0000000008002f0f       0x56 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(kernel_init.o)
+                0x0000000008002f53       0x56 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(kernel_init.o)
  .rodata.apbmul
-                0x0000000008002f65        0x2 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/stm32_common.a(cpu_common.o)
- *fill*         0x0000000008002f67        0x1 
+                0x0000000008002fa9        0x2 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/stm32_common.a(cpu_common.o)
+ *fill*         0x0000000008002fab        0x1 
  .rodata.timer_config
-                0x0000000008002f68       0x10 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/stm32_common_periph.a(timer.o)
+                0x0000000008002fac       0x10 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/stm32_common_periph.a(timer.o)
  .rodata.str1.1
-                0x0000000008002f78      0x199 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
-                                        0x19b (size before relaxing)
- *fill*         0x0000000008003111        0x3 
+                0x0000000008002fbc      0x28c /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
+                                        0x28e (size before relaxing)
  .rodata.adc_config
-                0x0000000008003114       0x38 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
- .rodata        0x000000000800314c       0x40 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+                0x0000000008003248       0x38 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
+ .rodata        0x0000000008003280       0x40 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
  .rodata.str1.1
-                0x000000000800318c        0x2 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
- *fill*         0x000000000800318e        0x2 
+                0x00000000080032c0        0x2 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+ *fill*         0x00000000080032c2        0x2 
  .rodata._global_impure_ptr
-                0x0000000008003190        0x4 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
-                0x0000000008003190                _global_impure_ptr
+                0x00000000080032c4        0x4 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+                0x00000000080032c4                _global_impure_ptr
  .rodata.__sf_fake_stdin
-                0x0000000008003194       0x20 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x0000000008003194                __sf_fake_stdin
+                0x00000000080032c8       0x20 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00000000080032c8                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x00000000080031b4       0x20 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00000000080031b4                __sf_fake_stdout
+                0x00000000080032e8       0x20 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00000000080032e8                __sf_fake_stdout
  .rodata.__sf_fake_stderr
-                0x00000000080031d4       0x20 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00000000080031d4                __sf_fake_stderr
+                0x0000000008003308       0x20 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x0000000008003308                __sf_fake_stderr
  .rodata.str1.1
-                0x00000000080031f4       0x11 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000008003328       0x11 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata.str1.1
-                0x0000000008003205       0x22 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008003339       0x22 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008003228                . = ALIGN (0x4)
- *fill*         0x0000000008003227        0x1 
+                0x000000000800335c                . = ALIGN (0x4)
+ *fill*         0x000000000800335b        0x1 
  *(.init)
-                0x0000000008003228                . = ALIGN (0x4)
-                0x0000000008003228                __preinit_array_start = .
+                0x000000000800335c                . = ALIGN (0x4)
+                0x000000000800335c                __preinit_array_start = .
  *(.preinit_array)
-                0x0000000008003228                __preinit_array_end = .
-                0x0000000008003228                . = ALIGN (0x4)
-                0x0000000008003228                __init_array_start = .
+                0x000000000800335c                __preinit_array_end = .
+                0x000000000800335c                . = ALIGN (0x4)
+                0x000000000800335c                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
-                0x0000000008003228                __init_array_end = .
-                0x0000000008003228                . = ALIGN (0x4)
+                0x000000000800335c                __init_array_end = .
+                0x000000000800335c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x0000000008003228                . = ALIGN (0x4)
+                0x000000000800335c                . = ALIGN (0x4)
  *(.fini)
-                0x0000000008003228                . = ALIGN (0x4)
-                0x0000000008003228                __fini_array_start = .
+                0x000000000800335c                . = ALIGN (0x4)
+                0x000000000800335c                __fini_array_start = .
  *(.fini_array)
  *(SORT(.fini_array.*))
-                0x0000000008003228                __fini_array_end = .
+                0x000000000800335c                __fini_array_end = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x0000000008003228                . = ALIGN (0x4)
-                0x0000000008003228                _efixed = .
+                0x000000000800335c                . = ALIGN (0x4)
+                0x000000000800335c                _efixed = .
                 [!provide]                        PROVIDE (__exidx_start, .)
 
-.vfp11_veneer   0x0000000008003228        0x0
- .vfp11_veneer  0x0000000008003228        0x0 linker stubs
+.vfp11_veneer   0x000000000800335c        0x0
+ .vfp11_veneer  0x000000000800335c        0x0 linker stubs
 
-.v4_bx          0x0000000008003228        0x0
- .v4_bx         0x0000000008003228        0x0 linker stubs
+.v4_bx          0x000000000800335c        0x0
+ .v4_bx         0x000000000800335c        0x0 linker stubs
 
-.iplt           0x0000000008003228        0x0
- .iplt          0x0000000008003228        0x0 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
+.iplt           0x000000000800335c        0x0
+ .iplt          0x000000000800335c        0x0 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
 
-.igot.plt       0x0000000008003228        0x0
- .igot.plt      0x0000000008003228        0x0 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
+.igot.plt       0x000000000800335c        0x0
+ .igot.plt      0x000000000800335c        0x0 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
 
-.rel.dyn        0x0000000008003228        0x0
- .rel.iplt      0x0000000008003228        0x0 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
+.rel.dyn        0x000000000800335c        0x0
+ .rel.iplt      0x000000000800335c        0x0 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
                 [!provide]                        PROVIDE (__exidx_end, .)
-                0x0000000008003228                . = ALIGN (0x4)
+                0x000000000800335c                . = ALIGN (0x4)
 
 .eh_frame
  *(.eh_frame)
-                0x0000000008003228                . = ALIGN (0x4)
-                0x0000000008003228                _etext = .
+                0x000000000800335c                . = ALIGN (0x4)
+                0x000000000800335c                _etext = .
 
 .stack          0x0000000020000000      0x200
                 0x0000000020000000                . = ALIGN (0x8)
@@ -3429,7 +3428,7 @@ END GROUP
                 0x0000000020000200                . = ALIGN (0x8)
                 0x0000000020000200                _estack = .
 
-.relocate       0x0000000020000200       0xa4 load address 0x0000000008003228
+.relocate       0x0000000020000200       0xa4 load address 0x000000000800335c
                 0x0000000020000200                . = ALIGN (0x4)
                 0x0000000020000200                _srelocate = .
  *(.ramfunc .ramfunc.*)
@@ -3466,7 +3465,7 @@ END GROUP
  *fill*         0x00000000200002a2        0x2 
                 0x00000000200002a4                _erelocate = .
 
-.bss            0x00000000200002a4      0x8e4 load address 0x00000000080032cc
+.bss            0x00000000200002a4      0x8e4 load address 0x0000000008003400
                 0x00000000200002a4                . = ALIGN (0x4)
                 0x00000000200002a4                _sbss = .
                 0x00000000200002a4                _szero = .
@@ -3535,7 +3534,7 @@ END GROUP
                 0x0000000020002000                _eram = (ORIGIN (ram) + LENGTH (ram))
 OUTPUT(/home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x18cee
+.debug_info     0x0000000000000000    0x18d8f
  .debug_info    0x0000000000000000       0xd1 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
  .debug_info    0x00000000000000d1     0x1794 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/newlib_syscalls_default/syscalls.o
  .debug_info    0x0000000000001865      0x5c9 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(sched.o)
@@ -3559,39 +3558,39 @@ OUTPUT(/home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bi
  .debug_info    0x000000000000b073      0xc60 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/stm32_common_periph.a(timer.o)
  .debug_info    0x000000000000bcd3      0x32f /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tsrb.a(tsrb.o)
  .debug_info    0x000000000000c002       0x37 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph_common.a(init.o)
- .debug_info    0x000000000000c039      0xec6 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
- .debug_info    0x000000000000ceff      0x8bb /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/auto_init.a(auto_init.o)
- .debug_info    0x000000000000d7ba      0x647 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(mutex.o)
- .debug_info    0x000000000000de01      0x458 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cortexm_common.a(cortexm_init.o)
- .debug_info    0x000000000000e259      0xb66 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
- .debug_info    0x000000000000edbf       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_thumb1_case_uqi.o)
- .debug_info    0x000000000000ee78       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_udivsi3.o)
- .debug_info    0x000000000000ef31       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
- .debug_info    0x000000000000efea       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
- .debug_info    0x000000000000f0a3      0x1e7 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
- .debug_info    0x000000000000f28a      0x20d /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
- .debug_info    0x000000000000f497      0x20d /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
- .debug_info    0x000000000000f6a4      0x60a /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
- .debug_info    0x000000000000fcae      0x1c2 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
- .debug_info    0x000000000000fe70      0x1b7 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatunsidf.o)
- .debug_info    0x0000000000010027       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
- .debug_info    0x00000000000100e0      0x7d3 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
- .debug_info    0x00000000000108b3      0x105 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
- .debug_info    0x00000000000109b8       0xd3 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
- .debug_info    0x0000000000010a8b      0x895 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
- .debug_info    0x0000000000011320      0x92a /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-puts.o)
- .debug_info    0x0000000000011c4a      0x916 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
- .debug_info    0x0000000000012560      0x881 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
- .debug_info    0x0000000000012de1      0xa06 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
- .debug_info    0x00000000000137e7      0xd5a /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
- .debug_info    0x0000000000014541      0x852 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
- .debug_info    0x0000000000014d93      0x98c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
- .debug_info    0x000000000001571f      0x81e /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
- .debug_info    0x0000000000015f3d      0x8f9 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
- .debug_info    0x0000000000016836      0xe14 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
- .debug_info    0x000000000001764a      0xb77 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_info    0x00000000000181c1      0xa35 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
- .debug_info    0x0000000000018bf6       0xf8 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr.o)
+ .debug_info    0x000000000000c039      0xf67 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
+ .debug_info    0x000000000000cfa0      0x8bb /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/auto_init.a(auto_init.o)
+ .debug_info    0x000000000000d85b      0x647 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(mutex.o)
+ .debug_info    0x000000000000dea2      0x458 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cortexm_common.a(cortexm_init.o)
+ .debug_info    0x000000000000e2fa      0xb66 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
+ .debug_info    0x000000000000ee60       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_thumb1_case_uqi.o)
+ .debug_info    0x000000000000ef19       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_udivsi3.o)
+ .debug_info    0x000000000000efd2       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x000000000000f08b       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+ .debug_info    0x000000000000f144      0x1e7 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+ .debug_info    0x000000000000f32b      0x20d /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+ .debug_info    0x000000000000f538      0x20d /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
+ .debug_info    0x000000000000f745      0x60a /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+ .debug_info    0x000000000000fd4f      0x1c2 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+ .debug_info    0x000000000000ff11      0x1b7 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatunsidf.o)
+ .debug_info    0x00000000000100c8       0xb9 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+ .debug_info    0x0000000000010181      0x7d3 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+ .debug_info    0x0000000000010954      0x105 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
+ .debug_info    0x0000000000010a59       0xd3 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
+ .debug_info    0x0000000000010b2c      0x895 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
+ .debug_info    0x00000000000113c1      0x92a /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-puts.o)
+ .debug_info    0x0000000000011ceb      0x916 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
+ .debug_info    0x0000000000012601      0x881 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
+ .debug_info    0x0000000000012e82      0xa06 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+ .debug_info    0x0000000000013888      0xd5a /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+ .debug_info    0x00000000000145e2      0x852 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
+ .debug_info    0x0000000000014e34      0x98c /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+ .debug_info    0x00000000000157c0      0x81e /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+ .debug_info    0x0000000000015fde      0x8f9 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_info    0x00000000000168d7      0xe14 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+ .debug_info    0x00000000000176eb      0xb77 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_info    0x0000000000018262      0xa35 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+ .debug_info    0x0000000000018c97       0xf8 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr.o)
 
 .debug_abbrev   0x0000000000000000     0x602c
  .debug_abbrev  0x0000000000000000       0xa8 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
@@ -3972,7 +3971,7 @@ OUTPUT(/home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bi
  .debug_macro   0x000000000001d936      0x82c /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
  .debug_macro   0x000000000001e162       0x10 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
 
-.debug_line     0x0000000000000000     0xe2ed
+.debug_line     0x0000000000000000     0xe2f2
  .debug_line    0x0000000000000000      0x385 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o
  .debug_line    0x0000000000000385      0xa73 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/newlib_syscalls_default/syscalls.o
  .debug_line    0x0000000000000df8      0x60a /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(sched.o)
@@ -3996,39 +3995,39 @@ OUTPUT(/home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bi
  .debug_line    0x0000000000008e28      0x795 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/stm32_common_periph.a(timer.o)
  .debug_line    0x00000000000095bd      0x267 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tsrb.a(tsrb.o)
  .debug_line    0x0000000000009824       0xf7 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph_common.a(init.o)
- .debug_line    0x000000000000991b      0x95f /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
- .debug_line    0x000000000000a27a      0x83d /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/auto_init.a(auto_init.o)
- .debug_line    0x000000000000aab7      0x5dd /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(mutex.o)
- .debug_line    0x000000000000b094      0x5c0 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cortexm_common.a(cortexm_init.o)
- .debug_line    0x000000000000b654      0x74f /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
- .debug_line    0x000000000000bda3       0x66 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_thumb1_case_uqi.o)
- .debug_line    0x000000000000be09       0x6c /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_udivsi3.o)
- .debug_line    0x000000000000be75       0x5e /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
- .debug_line    0x000000000000bed3       0x76 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
- .debug_line    0x000000000000bf49       0xb0 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
- .debug_line    0x000000000000bff9       0xd6 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
- .debug_line    0x000000000000c0cf       0xd6 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
- .debug_line    0x000000000000c1a5      0x1a2 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
- .debug_line    0x000000000000c347       0x93 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
- .debug_line    0x000000000000c3da       0x8a /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatunsidf.o)
- .debug_line    0x000000000000c464       0x72 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
- .debug_line    0x000000000000c4d6       0xf1 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
- .debug_line    0x000000000000c5c7       0xb5 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
- .debug_line    0x000000000000c67c       0xed /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
- .debug_line    0x000000000000c769      0x1a8 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
- .debug_line    0x000000000000c911      0x1f9 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-puts.o)
- .debug_line    0x000000000000cb0a      0x1e9 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
- .debug_line    0x000000000000ccf3      0x1d6 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
- .debug_line    0x000000000000cec9      0x253 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
- .debug_line    0x000000000000d11c      0x2e0 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
- .debug_line    0x000000000000d3fc      0x1bb /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
- .debug_line    0x000000000000d5b7      0x1b4 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
- .debug_line    0x000000000000d76b      0x140 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
- .debug_line    0x000000000000d8ab      0x19a /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
- .debug_line    0x000000000000da45      0x2ee /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
- .debug_line    0x000000000000dd33      0x2fd /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_line    0x000000000000e030      0x1cc /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
- .debug_line    0x000000000000e1fc       0xf1 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr.o)
+ .debug_line    0x000000000000991b      0x964 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/tests_Power_measure.a(main.o)
+ .debug_line    0x000000000000a27f      0x83d /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/auto_init.a(auto_init.o)
+ .debug_line    0x000000000000aabc      0x5dd /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/core.a(mutex.o)
+ .debug_line    0x000000000000b099      0x5c0 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cortexm_common.a(cortexm_init.o)
+ .debug_line    0x000000000000b659      0x74f /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/periph.a(adc.o)
+ .debug_line    0x000000000000bda8       0x66 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_thumb1_case_uqi.o)
+ .debug_line    0x000000000000be0e       0x6c /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_udivsi3.o)
+ .debug_line    0x000000000000be7a       0x5e /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x000000000000bed8       0x76 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+ .debug_line    0x000000000000bf4e       0xb0 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+ .debug_line    0x000000000000bffe       0xd6 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+ .debug_line    0x000000000000c0d4       0xd6 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
+ .debug_line    0x000000000000c1aa      0x1a2 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+ .debug_line    0x000000000000c34c       0x93 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+ .debug_line    0x000000000000c3df       0x8a /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatunsidf.o)
+ .debug_line    0x000000000000c469       0x72 /usr/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+ .debug_line    0x000000000000c4db       0xf1 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+ .debug_line    0x000000000000c5cc       0xb5 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
+ .debug_line    0x000000000000c681       0xed /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
+ .debug_line    0x000000000000c76e      0x1a8 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
+ .debug_line    0x000000000000c916      0x1f9 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-puts.o)
+ .debug_line    0x000000000000cb0f      0x1e9 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
+ .debug_line    0x000000000000ccf8      0x1d6 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
+ .debug_line    0x000000000000cece      0x253 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+ .debug_line    0x000000000000d121      0x2e0 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+ .debug_line    0x000000000000d401      0x1bb /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
+ .debug_line    0x000000000000d5bc      0x1b4 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+ .debug_line    0x000000000000d770      0x140 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+ .debug_line    0x000000000000d8b0      0x19a /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_line    0x000000000000da4a      0x2ee /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+ .debug_line    0x000000000000dd38      0x2fd /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_line    0x000000000000e035      0x1cc /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+ .debug_line    0x000000000000e201       0xf1 /usr/lib/gcc/arm-none-eabi/4.9.3/../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr.o)
 
 .debug_str      0x0000000000000000    0x3b78b
  .debug_str     0x0000000000000000    0x2fb93 /home/inria/Documentos/Current-Measurement-Board/scripts/Power_measure/bin/nucleo32-l031/cpu/vectors.o

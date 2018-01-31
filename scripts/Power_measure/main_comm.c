@@ -55,13 +55,13 @@ uint32_t measure(adc_t line, adc_res_t RES, int samples)
 
 void calibrate(void)
 {
-  puts("Calibrating...\n");
+  printf("CALIBRATIONXX");
 
   for(unsigned i = 0; i < sizeof(CAL_VALS)/sizeof(CAL_VALS[0]); i++)
   {
     if (i == 0)
     {
-      printf("All switches open\n");
+      //printf("All switches open\n");
       pause(10);
 
       CAL_VALS[i] = measure(ADC_LINE(0), RES, 1024);
@@ -69,18 +69,19 @@ void calibrate(void)
     else
     {
       gpio_set(pins[i]);
-      printf("Connected resistor %i\n", i+1 );
+      //printf("Connected resistor %i\n", i+1 );
       pause(10);
 
       CAL_VALS[i] = measure(ADC_LINE(0), RES, 1024);
 
-      printf("V_CAL[%i]: %i\n", i, CAL_VALS[i]);
+      //printf("V_CAL[%i]: %i\n", i, CAL_VALS[i]);
 
       gpio_clear(pins[i]);
     }
+    printf("%i", CAL_VALS[i]);
   }
 
-  puts("Calibration finished.");
+  printf("\n");
 }
 
 // Initialize GPIO pins as output
@@ -143,16 +144,8 @@ int adc_lines_init(void)
 
 int main(void)
 {
-  // initialize gpio pins
-  pins_init();
-  pause(2000);
-  // Make calibration
-  calibrate();
-
-  printf("CALIBRATIONXX%iXX%iXX%iXX%iXX%i\n",CAL_VALS[0],CAL_VALS[1],CAL_VALS[2],CAL_VALS[3],CAL_VALS[4]);
-
   // Display message
-
+  /*
   puts("Script for power measurement using RIOT's ADC peripherial\n");
   puts("and power measurement board.\n");
   puts("Make sure of connections:\n");
@@ -160,31 +153,31 @@ int main(void)
   puts("  - A0 connected to CURRENT LOW\n");
   puts("  - A1 connected to CURRENT HIGH\n");
   puts("  - A2 connected to ADC_VOLT\n");
+  */
 
-  pause(2000);
+  // initialize gpio pins
+  pins_init();
 
   // initialize adc lines
   adc_lines_init();
 
-  printf("CAL VALUES: \n");
-  printf("CAL_VALS[0]: %i\n", CAL_VALS[0]);
-  printf("CAL_VALS[1]: %i\n", CAL_VALS[1]);
-  printf("CAL_VALS[2]: %i\n", CAL_VALS[2]);
-  printf("CAL_VALS[3]: %i\n", CAL_VALS[3]);
-  printf("CAL_VALS[4]: %i\n", CAL_VALS[4]);
+  // Make calibration
+  calibrate();
 
   // Useful for data acquisition
-  int measurement[3];
+  int measurement;
 
   // measure!
   gpio_set(D2); // enable MCU power
 
   while(1)
   {
+    printf("READING");
     for (int i = 0; i < 3; i++)
     {
-      measurement[i] = measure(ADC_LINE(i), RES, SAMPLES_ADC);
-      printf("Measure from line[%i]: %i\n", i, measurement[i]);
+      measurement = measure(ADC_LINE(i), RES, SAMPLES_ADC);
+      //printf("Measure from line[%i]: %i\n", i, measurement[i]);
+      printf("XX%i", measurement);
     }
     printf("\n");
     pause(DELAY);
