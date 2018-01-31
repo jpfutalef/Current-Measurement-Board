@@ -1,4 +1,4 @@
-# SCRIPTS PARA EL USO DE RIOT EN CONJUNTO CON PLACA DE MEDICIONDE CONSUMO PARA MCU'S
+# SCRIPTS PARA EL USO DE RIOT EN CONJUNTO CON PLACA DE MEDICION DE CONSUMO PARA MCU'S
 
 Los archivos son:
   - main.c : Script en RIOT que permite usar 3 perifericos analogicos para
@@ -14,7 +14,7 @@ Los archivos son:
     3. Calibrar con calibrate(). Esta funcion envia un buffer bien definido con los valores obtenidos en la calibracion.
     4. Set HIGH a GPIO de VMCU para activar voltaje al MCU objetivo.
     5. Realizar lecturas de acuerdo al tiempo especificado en la variable DELAY y enviarlas en un buffer bien definido.
-    
+
 
   - master.py: Script en python tipo master pues tiene como objetivo controlar las
     acciones del microcontrolador de lectura. Por el momento solo recibe data.
