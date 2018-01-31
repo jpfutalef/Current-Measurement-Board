@@ -33,6 +33,14 @@ Las resistencias R1,R2,R4 y R5 conforman una ganancia diferencial de 100 (100k/1
 
 ![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/pcb_layout/PCB/MAX4239/Images/IM2.png)
 
-La segunda etapa es conformada por
+La segunda etapa es conformada por un DUAL OP AMP LTC6241 de alta precision. Hay dos rangos de medicion que tienen distintas ganancias cada uno:
+- Low current range: 0uA-600uA
+- High current tange: 600uA-50mA
+
+Para corrientes bajas, la segunda etapa amplifica x197, util para lectura en ADC. Para corrientes altas solo se amplifica x1.51. Las resistencias de 49.9R son utiles para aislar la salida del ADC y evitar oscilaciones.
 
 ![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/pcb_layout/PCB/MAX4239/Images/IM5.png)
+
+La etapa de buffer para la fuente de poder utiliza un LTC6240 de alta precision, configurado a ganancia x0.5 con tal de evitar que valores altos de voltajes no puedan ser leidos por ADC de referencias de voltaje bajo (5V fuente -> 2.5V ADC puede ser leido con referencia de 3.3V). Además permite aislar el nodo del ADC.
+
+![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/pcb_layout/PCB/MAX4239/Images/IM3.png)
