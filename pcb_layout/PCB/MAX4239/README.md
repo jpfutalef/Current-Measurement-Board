@@ -25,7 +25,7 @@ La primera etapa se encarga de amplificar el voltage en la resistencia de shunt 
 CMRR depende de la tolerancia de las resistencias usadas:
 
 <div align="center">
-<a href="http://www.codecogs.com/eqnedit.php?latex=CMRR&space;=&space;\dfrac{A_d&plus;1}{4t}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?CMRR&space;=&space;\dfrac{A_d}{1&plus;4t}" title="CMRR = \dfrac{A_d}{1+4t}" /></a></div>
+<a href="http://www.codecogs.com/eqnedit.php?latex=CMRR&space;=&space;\dfrac{A_d&plus;1}{4t}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?CMRR&space;=&space;\dfrac{A_d&plus;1}{4t}" title="CMRR = \dfrac{A_d+1}{4t}" /></a></div>
 
 Ad es la ganancia diferencial y t la tolerancia. Se ha concluido que deben usarse resistencias de tolerancia 0.1% o menos.
 
