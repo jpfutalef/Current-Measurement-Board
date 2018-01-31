@@ -12,7 +12,7 @@
  /usr/include/newlib/sys/_types.h /usr/include/newlib/machine/_types.h \
  /usr/include/newlib/sys/lock.h /usr/include/newlib/sys/types.h \
  /usr/include/newlib/sys/_stdint.h /usr/include/newlib/machine/types.h \
- /usr/include/newlib/sys/stdio.h /usr/include/newlib/math.h \
+ /usr/include/newlib/sys/stdio.h \
  /home/inria/Documentos/Current-Measurement-Board/RIOT/sys/include/xtimer.h \
  /usr/lib/gcc/arm-none-eabi/4.9.3/include/stdint.h \
  /usr/include/newlib/stdint.h /usr/include/newlib/sys/_intsup.h \
@@ -99,8 +99,6 @@
 /usr/include/newlib/machine/types.h:
 
 /usr/include/newlib/sys/stdio.h:
-
-/usr/include/newlib/math.h:
 
 /home/inria/Documentos/Current-Measurement-Board/RIOT/sys/include/xtimer.h:
 
