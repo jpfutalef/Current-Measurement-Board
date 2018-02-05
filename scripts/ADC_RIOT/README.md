@@ -1,4 +1,5 @@
-# Test para uso de perifericos ADC en RIOT
+# ADC test in RIOT
 
-Script para pruebas iniciales en medicion de corriente.
-Implementa funcion pause(mil) para detener el microcontrolador por mil milisegundos (algunas implementacions en RIOT de xtimer no eran estables). 
+Initial current measurement test scripts.
+
+Avoids using xtimer_sleep since current master version (2018.01-branch) is broken for nucleo32-l031, instead custom pause(milliseconds) is used.

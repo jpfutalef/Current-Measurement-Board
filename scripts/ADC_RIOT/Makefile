@@ -1,7 +1,8 @@
 BOARD ?= nucleo32-l031
-include ../../RIOT/tests/Makefile.tests_common
 
-RIOTBASE=../../RIOT
+RIOTBASE=$(CURDIR)/../../../RIOT
+
+include $(RIOTBASE)/tests/Makefile.tests_common
 
 FEATURES_REQUIRED = periph_adc
 
