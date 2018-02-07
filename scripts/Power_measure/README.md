@@ -25,3 +25,6 @@ Los archivos son:
 
   - Makefile: makefile para main.c que especifica el directorio de RIOT y algunos modulos
     usados.
+
+### Current state of SCRIPTS
+- main.c just makes printf of values in a fixed frequency. It also makes calibration and send calibration values at startup. Should send these values whenever the user ask for them (from computer). For online readings, the user might have 2 options: request for the last reading or set, from the computer, the frequency of reading.
