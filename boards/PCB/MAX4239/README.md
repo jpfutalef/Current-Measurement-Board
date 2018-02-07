@@ -18,7 +18,9 @@ Hay una primera etapa de amplificacion para la caída de tension en la resistenc
 
 Una etapa de reduccion de voltaje en la fuente de alimentacion del MCU permite leer el voltaje con bastante precision.
 
-Finalmente, un conjunto de resistencia y switch analogos permiten calibrar para compensar la zona no lineal en la que el amplificador entra al acercarse al voltaje de offset en la entrada.
+Un conjunto de resistencia y switch analogos permiten calibrar para compensar la zona no lineal en la que el amplificador entra al acercarse al voltaje de offset en la entrada.
+
+Finalmente, un master switch se encarga de cortar el suministro al MCU objetivo para realizar la calibracion.
 
 ### Working (detailed)
 
