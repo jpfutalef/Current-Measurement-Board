@@ -16,7 +16,7 @@ Considerando que se tiene una placa compatible con RIOT:
 
 ### Especificaciones:
 - Alimentación de 5V desde USB
-- Rango: ~10uA - 50mA
+- Rango(ideal): ~1uA - 50mA
 - Primera etapa ganancia de 100
 - Segunda etapa amplifica 197 para bajas corrientes y 1.51 para altas corrientes.
 
@@ -123,4 +123,11 @@ La carcasa del USB tipo A es conectado a tierra digital.
 
 ## MAX4239 V3 (no prototipada)
 
-This design should fix the issues refering to supply voltages of IC's, unconnected switches and wrong silkscreen labels.
+Esta versión debiese solucionar todos los issues presentados en la versión anterior.
+- El problema de la alimentación es solucionado utilizando un DC booster que entregue 5V5 de alimentación (MIC2250).
+- C2 está bien puesto.
+- La ganancia de low current es solucionada cambiando la resistencia de 10K por 1K.
+- Los switch están bien conectados y reorganizados.
+- Se incluyen resistencias de pull-down en las lineas de control de los switch.
+
+La placa aún no se ha diseñado, sólo está el esquemático.
