@@ -75,15 +75,52 @@ Esta versión de la placa fue prototipada. La PCB fue manufacturada por OSHPARK 
 
 ### Acerca de
 
-Esta versión de la placa considera una alimentación de 5V para todos los IC, proveniente de la entrada micro USB. 
+Esta versión de la placa considera una alimentación de 5V para todos los IC, proveniente de la entrada micro USB.
+
+La primera etapa es un amplificador diferencial de ganancia 10. La segunda etapa consta de los rango Low Current (ganancia de 19,7) y high current (ganancia de 1,51).
+
+Para lecturas de la alimentacion del MCU objetivo, se utiliza una etapa que reduce el voltage a la mitad.
+
+Tierras digital y analoga son separadas con diodos schottky.
+
+Fuente de 5v de USB es filtrada con ferrita 1k@1MHz.
+
+La carcasa del USB tipo A es conectado a tierra digital.
+
+### Conclusiones a partir del prototipado de la placa
+
+#### Observaciones
+- Placa manufacturada
+- Soldado de componentes OK
+- Todos los IC reciben alimentación debida.
+- Todos los IC reciben tierra debida.
+- Conectando multiples resistencias para emular consumo se han logrado medir en el alto rango corrientes de 600uA.
+- Utilizando los switch para calibrar con las resistencias, se han observado valores que debiesen permitir calibrar.
+
+#### Qué falta hacer
+- Checkear el rango efectivo de medición.
+- Realizar medición con microcontrolador. Que este haga la calibración y controle los switches.
+
+#### Issues
+- Para alimentación de 5V se observan oscilaciones en la primera etapa. Se han agragado resistencias de 1KHz a tierra a la salida, observándose disminución aún continúa. El problema es solucionado alimentando externamente el circuito con 5.5V o más. Se concluye que el problema es debido a que en las entradas del MAX4239 hay un máximo de voltaje limitado por la alimentación.
+- Condensador C2 está mla puesto, debe conectarse a tierra. De todas formas puede quitarse y hacer un puente sin problemas.
+- La ganancia de la etapa de low current debiese ser 187, no 19,7. Esto fue debido a que la resistencia de 10K es incorrecta, debiese ser de 1K.
+- Los switch de control de alimentación al MCU están mal conectados. Esto fue solucionado soldando un cable a las patas que lo controlan.
+- Agregar resistencias de pulldown a los controles de los switch como precaución en caso de no existir.
+- En la placa, hay nombres en la silkscreen cambiados.
+- Con respecto al laboratorio: muchos problemas de estática, ocurrieron muchos casos de descarga electroestática que producían oscilaciones en el circuito y que podrían dañar a IC. El osciloscopio tiene un problema, en cierto momento se detiene y debe ser reiniciado, al momento de reiniciarse el canal 1 siempre ponía impedancia de 50ohm e invertido, afectando la observación.
+
+#### Qué se podría mejorar
+- Mejorar CMRR incrementando tolerancia de TODAS las resistencias, que sean de 0,1% o menos. También puede incrementarse aumentando la ganancia diferencial, pero esto afecta los rangos de medición.
+- Los micro USB ojalá que sean Thru-hole para evitar que se salgan.
+- Para el switch que entrega alimentación al MCU objetivo, unir los dos switch y así permitir más paso de corriente.
+
+#### Tips
+- Uso de pasta de soldar y pistola de calor es recomendable para componentes de tamaño muy reducido
+- Cautín de punta plana y malla de cobre con flux ayuda a remover exceso de estaño
+- USB thru-hole ojalá soldar con estaño de alto punto de fusión pues es más duro
+- Descarga a tierra puede hacerse con salida a tierra de los equipos
 
 ## MAX4239 V3 (no prototipada)
 
-# Conclusiones a partir del prototipado de la placa
-
-## Logros
-- Prototipado de placa
-- Soldado de componentes
--
-
-## Issues
+This design should fix the issues refering to supply voltages of IC's, unconnected switches and wrong silkscreen labels.
