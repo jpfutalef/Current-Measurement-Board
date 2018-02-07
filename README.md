@@ -9,7 +9,7 @@ This board has to be easy to connect to a computer or a raspberry, minimizing ca
 
 ## Organization
 
-The repo is organized as follows
+The repo is organized as follows,
 
 * **ltspice**: in this folder can be found the different spice schematics to simulate the different current measurement boards.
 * **scripts**: in this folder can be found different c, python, etc. scripts used to read data from the current measurement circuit or calibrate the respective board.

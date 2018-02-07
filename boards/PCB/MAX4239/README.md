@@ -2,9 +2,17 @@
 
 El MAX4239 es un OP AMP auto-zero, con un voltaje offset de entrada de 0.1uV tipico y 2uV en todo el rango de temperatura, además de un CMRR de  120dB minimos y 140dB típico.
 
-## MAX4239 V2
+### Cómo usar
 
-## MAX4239 V3
+Considerando que se tiene una placa compatible con RIOT:
+
+- Conectar los controles de switch (SWITCH_CTRL_1 a SWITCH_CTRL_5) a GPIO.
+- Conectar las salidas de low current, high current y adc volt (medición de supply) a las entradas analógicas.
+- Conectar alimentación a entrada micro USB desde computadora o 5V.
+- Conectar alimentación del MCU objetivo a VBAT. En caso de querer alimentar todo desde la alimentación USB, conectar un jumper entre 5V y VBAT.
+- Si el MCU objetivo puede ser conectado por USB, utilizar el puerto USB tipo A. Este puerto mantiene la comunicación serial.
+- En caso de no poder utilizar un USB, la alimentación del MCU objetivo puede obtenerse desde VMCU.
+
 
 ### Especificaciones:
 - Alimentación de 5V desde USB
@@ -12,21 +20,9 @@ El MAX4239 es un OP AMP auto-zero, con un voltaje offset de entrada de 0.1uV tip
 - Primera etapa ganancia de 100
 - Segunda etapa amplifica 197 para bajas corrientes y 1.51 para altas corrientes.
 
-### Funcionamiento (resumen)
+### Working of current version (3) (detailed)
 
-Hay una primera etapa de amplificacion para la caída de tension en la resistencia de shunt. Una segunda etapa de amplificacion sirve como buffer para ADC y amplificacion para adecuar los voltajes necesarios para el ADC. Dos amplificadores en la segunda etapa permiten sensar rangos de microamperes y miliamperes.
-
-Una etapa de reduccion de voltaje en la fuente de alimentacion del MCU permite leer el voltaje con bastante precision.
-
-Un conjunto de resistencia y switch analogos permiten calibrar para compensar la zona no lineal en la que el amplificador entra al acercarse al voltaje de offset en la entrada.
-
-Finalmente, un master switch se encarga de cortar el suministro al MCU objetivo para realizar la calibracion.
-
-### Working (detailed)
-
-La primera etapa se encarga de amplificar el voltage en la resistencia de shunt mediante configuracion de amplificador diferencial. El IC debe ser tal que su offset de entrada sea bajo y no se compare al voltaje que se está amplificando (para microamperes hay una caida de voltaje de microvolts en la resistencia de shunt). Además debe disminuirse lo más posible el CMRR, para obtener una amplificacion a lazo cerrado ojalá solamente diferencial.
-
-Las resistencias R1,R2,R4 y R5 conforman una ganancia diferencial de 100 (100k/1k) entre VBAT y VS- (terminales de la resistencia de shunt). R6 y C3 son añadidos para estabilidad, C3 además ayuda a disminuir los peaks de carga del auto-zero. C2 ayuda a mantener la fuente estable.
+La primera etapa se encarga de amplificar el voltage en la resistencia de Shunt mediante configuracion de amplificador diferencial. Las resistencias R1,R2,R4 y R5 conforman una ganancia diferencial de 100 (100k/1k) entre VBAT y VS- (terminales de la resistencia de shunt). R6 y C3 son añadidos para estabilidad, C3 además ayuda a disminuir los peaks de carga del auto-zero. C2 ayuda a mantener la fuente estable.
 
 ![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/MAX4239/Images/IM2.png)
 
@@ -34,9 +30,11 @@ La segunda etapa es conformada por un DUAL OP AMP LTC6241 de alta precision. Hay
 - Low current range: 0uA-600uA
 - High current tange: 600uA-50mA
 
-Para corrientes bajas, la segunda etapa amplifica x197, util para lectura en ADC. Para corrientes altas solo se amplifica x1.51. Las resistencias de 49.9R son utiles para aislar la salida del ADC y evitar oscilaciones.
+Para corrientes bajas, la segunda etapa amplifica x197. Para corrientes altas solo se amplifica x1.51. Estas ganancias acomodan el voltaje a los rangos del ADC. Las resistencias de 49.9R son utiles para aislar la salida del amplificador y evitar oscilaciones.
 
-Se utilizan 4 switch analogos normalmente abiertos para calibrar la medición en corrientes pequeñas. Los TS5A23166DCUR son elegidos debido al alto voltaje soportado en sus entradas, alta corriente máxima y baja resistencia (0.7 omhs aprox.). En cambio, se elige un switch normalmente cerrado para la alimentación del MCU objetivo, un TS5A23167DCUR, de características equivalentes al TS5A23166DCUR.
+![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/MAX4239/Images/IM5.png)
+
+Se utilizan 4 switch analogos normalmente abiertos para calibrar la medición en corrientes pequeñas utilizando las resistencias R9, R10, R13 y R14. Los TS5A23166DCUR son elegidos debido al alto voltaje soportado en sus entradas, alta corriente máxima y baja resistencia (0.7 omhs aprox.). En cambio, se elige un switch normalmente cerrado para la alimentación del MCU objetivo, un TS5A23167DCUR, de características equivalentes al TS5A23166DCUR. El capacitor C1 es puesto entre la alimentación del MCU objetivo para asegurar estabilidad.
 
 ![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/MAX4239/Images/IM1.png)
 
@@ -60,8 +58,6 @@ Diversos pines de utilidad son puestos a disposición del usuario. Estos permite
 - VBAT: voltaje con el que se supone se alimenta el MCU.
 - +5V: salida de 5V, separada de USB por la ferrita.
 
-En caso de querer usar la placa con USB desde el computador, un jumper debe ser puesto entre +5V y VBAT.
-
 
 ![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/MAX4239/Images/IM7.png)
 
@@ -69,6 +65,25 @@ El MAX4239 puede ser alimentado hasta 6V. Sin embargo en sus entradas diferencia
 
 ![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/MAX4239/Images/IM3.png)
 
+# Versiones placas
+
+## MAX4239 V1 (no prototipada)
+Esquemático es equivalente al de la versión 2. El único cambio es de la pcb board que se descarta por ser de gran tamaño y no tener bien las reglas de diseño.
+
+## MAX4239 V2 (prototipada)
+Esta versión de la placa fue prototipada. La PCB fue manufacturada por OSHPARK y los componentes fueron comprados en DigiKey. El soldado de componentes y pruebas de laboratorio fueron realizados en el IOT LAB de Inria Chile.
+
+### Acerca de
+
+Esta versión de la placa considera una alimentación de 5V para todos los IC, proveniente de la entrada micro USB. 
+
+## MAX4239 V3 (no prototipada)
+
+# Conclusiones a partir del prototipado de la placa
+
 ## Logros
+- Prototipado de placa
+- Soldado de componentes
+-
 
 ## Issues
