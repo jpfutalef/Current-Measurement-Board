@@ -32,7 +32,7 @@ MAX4239 is a auto-zero amplifier, with low input voltage offset of 1.0uV (typica
 
 The first stage amplifies the voltage measured at the shunt by applying a differential gain. R1, R2, R4 & R5 form a x100 gain. R6 and C3 are added for stability, C3 also helps to reduce currents peaks. C2 stabilizes the power supply.
 
-![max4239_gain_stage](IM2.png)
+![max4239_gain_stage](images/IM2.png)
 
 The second stage is conformed by a dual LTC6241 high precision opamp. There are two current ranges with to different gains:
 
@@ -41,7 +41,7 @@ The second stage is conformed by a dual LTC6241 high precision opamp. There are 
 
 These gains values adjust to the ADC input ranges. The 49.9 resistor are put in place to isolate the amplifier output and the ADC input, thus preventing oscillation.
 
-![ltc6241_gain_stage](IM5.png)
+![ltc6241_gain_stage](images/IM5.png)
 
 4 analog switches (usually open are) used for calibration, this is done by measuring current flow threw resistors R9, R10, R13 and R14. TS5A23166DCUR switches where chosen because of the high voltage input range, high max current and low Ron (0.8 ohms).
 
@@ -49,17 +49,17 @@ A normally closed switch is connected between the target node and it's supply so
 
 C1 is connected between the supply source and ground to stabilize it.
 
-![switches](IM1.png)
+![switches](images/IM1.png)
 
 The buffer stage to measure the supply source uses a LTC6240 high precision amplifier with a x0.5 gain stage to allow supply voltage higher than the mcu supply (3.3V) to be converted. This buffer stages also isolated the two.
 
-![voltage_buffer](IM3.png)
+![voltage_buffer](images/IM3.png)
 
 As a supply source a microUSB type B female connector is used. This supply a 5V power supply. To reduce high frequency noise a high impedance, low frequency ferrite is used (1K@1Mhz).
 
 A female type A USB connector can be used to power the targeted node. Virtual and digital ground are separated by using two schottky diodes, CUS08F30 because of their high response and low activation voltage.
 
-![power_supply_sources](IM6.png)
+![power_supply_sources](images/IM6.png)
 
 Multiple input/output pins are supplied (R21 to R25 are pull down resistors so calibration resistors and node supply are normally turned off). These are:
 
@@ -72,11 +72,11 @@ Multiple input/output pins are supplied (R21 to R25 are pull down resistors so c
 - VBAT: pin where targeted node supply voltage is connected to bypass it.
 - +5V: 5V output, its separated from the USB by the ferrite.
 
-![input_output_pins](IM7.png)
+![input_output_pins](images/IM7.png)
 
 MAX4239 maximum supply voltage is 6V & it's differential inputs can only take inputs 0.3V bellow its supply voltage. It has been observed that for 5V inputs in one of the differential inputs the MAX4239 voltage output oscillates. This is fixed by using a MIC2250 booster to boost supply to 5.5 volts. The configurations used is the one recommended by manufacturer.
 
-![max4239_supply_boost](IM3.png)
+![max4239_supply_boost](images/IM3.png)
 
 # Board versions
 
