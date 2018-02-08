@@ -25,7 +25,7 @@ El funcionamiento de este circuito es equivalente al del MAX4239, sólo que sin 
 
 La primera etapa se encarga de amplificar el voltage en la resistencia de Shunt mediante configuracion de amplificador diferencial. Las resistencias R1,R2,R4 y R5 conforman una ganancia diferencial de 100 (100k/1k) entre VBAT y VS- (terminales de la resistencia de shunt). R6 y C3 son añadidos para estabilidad, C3 además ayuda a disminuir los peaks de carga del auto-zero. C2 ayuda a mantener la fuente estable.
 
-![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/LMP2011/Images/first.png)
+![alt text](images/first.JPG)
 
 La segunda etapa es conformada por un DUAL OP AMP LTC6241 de alta precision. Hay dos rangos de medicion que tienen distintas ganancias cada uno:
 - Low current range: 0uA-600uA
@@ -33,19 +33,19 @@ La segunda etapa es conformada por un DUAL OP AMP LTC6241 de alta precision. Hay
 
 Para corrientes bajas, la segunda etapa amplifica x197. Para corrientes altas solo se amplifica x1.51. Estas ganancias acomodan el voltaje a los rangos del ADC. Las resistencias de 49.9R son utiles para aislar la salida del amplificador y evitar oscilaciones.
 
-![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/LMP2011/Images/second.png)
+![alt text](images/second.JPG)
 
 Se utilizan 4 switch analogos normalmente abiertos para calibrar la medición en corrientes pequeñas utilizando las resistencias R9, R10, R13 y R14. Los TS5A23166DCUR son elegidos debido al alto voltaje soportado en sus entradas, alta corriente máxima y baja resistencia (0.7 omhs aprox.). En cambio, se elige un switch normalmente cerrado para la alimentación del MCU objetivo, un TS5A23167DCUR, de características equivalentes al TS5A23166DCUR. El capacitor C1 es puesto entre la alimentación del MCU objetivo para asegurar estabilidad.
 
-![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/LMP2011/Images/switch.png)
+![alt text](images/switch.JPG)
 
 La etapa de buffer para la fuente de poder utiliza un LTC6240 de alta precision, configurado a ganancia x0.5 con tal de evitar que valores altos de voltajes no puedan ser leidos por ADC de referencias de voltaje bajo (5V fuente -> 2.5V ADC puede ser leido con referencia de 3.3V). Además permite aislar el nodo del ADC.
 
-![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/LMP2011/Images/supply.png)
+![alt text](images/supply.JPG)
 
 Para la alimentación, se utiliza una entrada micro USB tipo B hembra, que proporciona 5V desde una computadora o cargador. En caso de uso con la computadora, se han cortocircuitados las líneas de datos D+ y D-. Para evitar el ruido de alta frecuencia del computador, se utiliza una ferrita de alta impedancia a baja frecuencia (1K@1Mhz). Un conector hembra USB tipo A proporciona la salida del circuito para alimentar al MCU objetivo. Finalmente, se separa la tierra virtual de la digital mediante diodos schottky CUS08F30 debido a su rápida respuesta y bajo voltaje de activación.
 
-![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/LMP2011/Images/USB.png)
+![alt text](images/USB.JPG)
 
 Diversos pines de utilidad son puestos a disposición del usuario. Estos permiten alimentar con fuente externa, observar las salidas de las distintas etapas, controlar switchs, etc. Las resistencias 21 a 25 son de pull down.
 
@@ -60,7 +60,7 @@ Diversos pines de utilidad son puestos a disposición del usuario. Estos permite
 - +5V: salida de 5V, separada de USB por la ferrita.
 
 
-![alt text](https://github.com/jpfutalef/Current-Measurement-Board/blob/master/boards/PCB/LMP2011/Images/utility.png)
+![alt text](images/utility.JPG)
 
 # Versiones placas
 
