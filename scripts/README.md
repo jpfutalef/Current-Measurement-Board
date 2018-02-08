@@ -2,11 +2,11 @@
 
 These scripts are intended to be used with RIOT for power measurement using the power measurement board.
 
-### ADC_RIOT
+### adc_riot_test
 Test RIOT's peripherial ADC, using a pause function to make a read with a fixed frequency. The user can set in the script the frequency, bit resolution, etc.
 
-### INA226_ADC
+### arduino_ina226
 INA226 IC was used to measure current with Arduino and the INA226_ADC.ino file inside this folder.
 
-### Power_measure
+### power_measure
 Necessary scripts for power measuring using the board. Includes a main file with makefile to flash into a micro-controller (Intended to be used with RIOT) and a master.py file to read values from computer via serial communication and make calculations.
