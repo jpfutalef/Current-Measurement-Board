@@ -81,7 +81,7 @@ Multiple input/output pins are exposed to users:
 # Board versions
 
 ## LMP2011 V1 - Fabricated
-This version of the board was manufactured with OSHPARK[OSHPARK](https://oshpark.com/). Soldering and testing was done at Inria Chile office.
+This version of the board was manufactured with [OSHPARK](https://oshpark.com/). Soldering and testing was done at Inria Chile office.
 
 ### Overview
 
