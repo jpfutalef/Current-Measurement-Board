@@ -1,126 +1,138 @@
-#PCB eagle schematics and boards for LMP2011
+# PCB eagle schematics and boards for LMP2011
 
-El LMP2011 es un OP AMP auto-zero de offset de entrada de 60uV máximo (en todo rango de temperatura) y 0.8 uV tipicos. Ademas tiene un CMRR tipico de 130dB con un minimo de  95dB.
+LMP2011 is a precision OPAMP. This device uses auto-zero techniques to continually correct the input offset error voltage. The input offset is 60uV in the worst case scenario,  0.8uV typically. Furthermore has a typical CMRR of 130dB, its minimum is 95dB.
 
-### Cómo usar
+## Notations
+* Current Measuring Board (CMB): PCB with the designed circuit that can measure shunt voltage, and supply voltage.
+* mcu: microcontroller connected to the CMB, its performs calibrations and translate the supply voltage and current measurements.
+* Node: target mcu which power consumption the CMB is measuring.
 
-Considerando que se tiene una placa compatible con RIOT:
 
-- Conectar los controles de switch (SWITCH_CTRL_1 a SWITCH_CTRL_5) a GPIO.
-- Conectar las salidas de low current, high current y adc volt (medición de supply) a las entradas analógicas.
-- Conectar alimentación a entrada micro USB desde computadora o 5V.
-- Conectar alimentación del MCU objetivo a VBAT. En caso de querer alimentar todo desde la alimentación USB, conectar un jumper entre 5V y VBAT.
-- Si el MCU objetivo puede ser conectado por USB, utilizar el puerto USB tipo A. Este puerto mantiene la comunicación serial.
-- En caso de no poder utilizar un USB, la alimentación del MCU objetivo puede obtenerse desde VMCU.
+## How to use
 
-### Especificaciones:
-- Alimentación de 5V desde USB
-- Rango: ~10uA - 50mA
-- Primera etapa ganancia de 100
-- Segunda etapa amplifica 197 para bajas corrientes y 1.51 para altas corrientes.
+* Connect switch controllers (SWITCH_CTRL_1 to SWITCH_CTRL_5) to 5 different GPIO on any mcu.
+* Connect low current, high current and supply voltage to 3 different ADC input in the mcu
+* Power the CMB, either from the micro usb port or with 5V from an external power supply
+* Bypass the targeted node power supply by either connecting it's power source to VBAT or the USB port on CMB.
+* If the targeted node supply source is connected to VBAT then the node can be powered by connecting it's power input to VMCU, if it's USB powered a jumper must be connected between 5V and VBAT on CMB.
 
-### Working of current version (2) (detailed)
 
-El funcionamiento de este circuito es equivalente al del MAX4239, sólo que sin un DC booster (falta verificar que efectivamente este no sea necesario).
+## Specifications:
+- Power supply: 5V from USB port
+- Current range: ~10uA - 50mA
+- First stage gain: x100
+- Second stage gain: x197 for low current, x1.51 for high current
 
-La primera etapa se encarga de amplificar el voltage en la resistencia de Shunt mediante configuracion de amplificador diferencial. Las resistencias R1,R2,R4 y R5 conforman una ganancia diferencial de 100 (100k/1k) entre VBAT y VS- (terminales de la resistencia de shunt). R6 y C3 son añadidos para estabilidad, C3 además ayuda a disminuir los peaks de carga del auto-zero. C2 ayuda a mantener la fuente estable.
+## How version 2 works(detailed)
+
+This board has a similar operation as the design using MAX4239, except that in this case the CMB does not include a DC booster (TODO: check if it is neccesary).
+
+### Fist stage
+
+The first stage amplifies the voltage difference in the shunt resistance through an OPAMP. R1, R2, R4 and R5 form a x100 gain between VBAT y VS-. R27 and C2 are added for stability purposes. 
 
 ![alt text](images/first.JPG)
 
-La segunda etapa es conformada por un DUAL OP AMP LTC6241 de alta precision. Hay dos rangos de medicion que tienen distintas ganancias cada uno:
-- Low current range: 0uA-600uA
-- High current tange: 600uA-50mA
+### Second stage
 
-Para corrientes bajas, la segunda etapa amplifica x197. Para corrientes altas solo se amplifica x1.51. Estas ganancias acomodan el voltaje a los rangos del ADC. Las resistencias de 49.9R son utiles para aislar la salida del amplificador y evitar oscilaciones.
+The second stage has a LTC6241 high precision dual opamp. There are two current ranges with different gains:
+
+- Low current range: 0uA-600uA, x197 gain
+- High current tange: 600uA-50mA, x1.51 gain
+
+These gains values adjust to the ADC input ranges. The 49.9 resistor are put in place to isolate the amplifier output and ADC input, thus preventing oscillation.
+
 
 ![alt text](images/second.JPG)
 
-Se utilizan 4 switch analogos normalmente abiertos para calibrar la medición en corrientes pequeñas utilizando las resistencias R9, R10, R13 y R14. Los TS5A23166DCUR son elegidos debido al alto voltaje soportado en sus entradas, alta corriente máxima y baja resistencia (0.7 omhs aprox.). En cambio, se elige un switch normalmente cerrado para la alimentación del MCU objetivo, un TS5A23167DCUR, de características equivalentes al TS5A23166DCUR. El capacitor C1 es puesto entre la alimentación del MCU objetivo para asegurar estabilidad.
+4 usually open analog switches are used for calibration in low current, this is done by measuring current flow threw resistors R9, R10, R13 and R14. TS5A23166DCUR switches where chosen for their high voltage input range, high max current and low Ron (0.8 ohms).
+
+A normally closed switch is connected between the target node and it's supply source. The TS5A23167DCUR was chosen with similar characteristics as the TS5A23167DCUR.
+
+C1 capacitor is connected between the supply source and ground to stabilize supply voltage from power source.
 
 ![alt text](images/switch.JPG)
 
-La etapa de buffer para la fuente de poder utiliza un LTC6240 de alta precision, configurado a ganancia x0.5 con tal de evitar que valores altos de voltajes no puedan ser leidos por ADC de referencias de voltaje bajo (5V fuente -> 2.5V ADC puede ser leido con referencia de 3.3V). Además permite aislar el nodo del ADC.
+The buffer stage to measure the supply source uses a LTC6240 high precision amplifier with a x0.5 gain stage to allow supply voltage higher than the mcu supply (3.3V) to be converted with the ADC. This buffer stages also isolated the two.
 
 ![alt text](images/supply.JPG)
 
-Para la alimentación, se utiliza una entrada micro USB tipo B hembra, que proporciona 5V desde una computadora o cargador. En caso de uso con la computadora, se han cortocircuitados las líneas de datos D+ y D-. Para evitar el ruido de alta frecuencia del computador, se utiliza una ferrita de alta impedancia a baja frecuencia (1K@1Mhz). Un conector hembra USB tipo A proporciona la salida del circuito para alimentar al MCU objetivo. Finalmente, se separa la tierra virtual de la digital mediante diodos schottky CUS08F30 debido a su rápida respuesta y bajo voltaje de activación.
+As a supply source a microUSB type B female connector is used. This gives a 5V power supply. To reduce high frequency noise a high impedance, low frequency ferrite is used (1K@1Mhz).
+
+A female type A USB connector can be used to power the targeted node. Analog and digital ground are separated by using two schottky diodes, CUS08F30 because of their high response and low activation voltage.
 
 ![alt text](images/USB.JPG)
 
-Diversos pines de utilidad son puestos a disposición del usuario. Estos permiten alimentar con fuente externa, observar las salidas de las distintas etapas, controlar switchs, etc. Las resistencias 21 a 25 son de pull down.
+### Available connections
 
-- SWITCH_CTRL_1: controla apertura del switch que proporciona energia al MCU.
-- SWITCH_CTRL_2 a 5: controla cierre de switch a resistencias de calibracion.
-- ADC_VOLT: salida buffer supply.
-- VMCU: voltaje que se entrega al MCU objetivo. En corto circuito con el usb.
-- GND: tierra
-- OUT_STAGE1: salida primera etapa correinte.
-- VS-: pata negativa resistencia de shunt.
-- VBAT: voltaje con el que se supone se alimenta el MCU.
-- +5V: salida de 5V, separada de USB por la ferrita.
+Multiple input/output pins are exposed to users: 
 
+- SWITCH_CTRL_1: switch's on power supply for targeted node.
+- SWITCH_CTRL_2 a 5: switches on or off calibration resistors.
+- VMCU: output voltage that powers the targeted node it's short-circuited to the female type A USB.
+- GND: ground
+- OUT_STAGE1: first amplifying stage gain output, for debugging purposes.
+- VS-: shunt resistor low voltage pin.
+- VBAT: pin where targeted node supply voltage is connected to bypass it.
+- +5V: 5V output, its separated from the USB by the ferrite. de 5V, separada de USB por la ferrita.
 
 ![alt text](images/utility.JPG)
 
-# Versiones placas
+# Board versions
 
-## LMP2011 V1 (prototipada)
-Esta versión de la placa fue prototipada. La PCB fue manufacturada por OSHPARK y los componentes fueron comprados en DigiKey. El soldado de componentes y pruebas de laboratorio fueron realizados en el IOT LAB de Inria Chile.
+## LMP2011 V1 - Fabricated
+This version of the board was manufactured with OSHPARK[OSHPARK](https://oshpark.com/). Soldering and testing was done at Inria Chile office.
 
-### Acerca de
+### Overview
 
-Esta versión de la placa considera una alimentación de 5V para todos los IC, excepto el LMP2011 que se le alimenta con 8V68 proporcionados por un DC booster.
+This board needs a 5V supply for most of the IC, LMP2011 get supply from a DC booster in the CMB.
 
-La primera etapa es un amplificador diferencial de ganancia 10. La segunda etapa consta de los rango Low Current (ganancia de 19,7) y high current (ganancia de 1,51).
+The first stage is a differential amplifier with x10 gain, the second stage has a low current stage with x197 gain and a high current range with x1.51 gain.
 
-Para lecturas de la alimentacion del MCU objetivo, se utiliza una etapa que reduce el voltage a la mitad.
+To read supply voltage a x0.5 buffer stage is used.
 
-Tierras digital y analoga son separadas con diodos schottky.
+Analog and digital ground are separate with schottky diodes.
 
-Fuente de 5v de USB es filtrada con ferrita 1k@1MHz.
+5V supply source is filtered with a 1k@1MHz ferrite.
 
-La carcasa del USB tipo A es conectado a tierra digital.
+USB enclosure is connected to the digital ground.
 
-### Conclusiones a partir del prototipado de la placa
+### Testing conclusions
 
-#### Observaciones
-- Placa manufacturada
-- Soldado de componentes OK
-- Todos los IC reciben alimentación debida.
-- Todos los IC reciben tierra debida.
-- Re leyendo el datasheet, se observa que el LMP2011 no puede funcionar con 8v68. No se conecta el MIC2250 y en la salida de 8v68 se conectan los 5V.
-- No se ha observado mediciones que sean concluyentes. Se ve que el LMP no funciona como debería. Se prueba en protoboard utilizando breakout y tampoco se observan buenos resultados.
+#### Remarks
+- Manufactured board
+- Soldered components
+- All IC had correct supply and GND connections
+- There is an error in power supply for the LMP2011 design: it can't be supply from 8v68. MIC2250 is not connected and bypass 5V to the supply pin of the IC.
+- There aren't conclusive results from the circuit. The CMB with this IC does not work as it should, neither in a breadboard.
 
-#### Qué falta hacer
-- Checkear que LMP2011 esté bien conectado y funcione como deba.
-- Checkear el rango efectivo de medición.
-- Realizar medición con microcontrolador. Que este haga la calibración y controle los switches.
+#### TODO
+- Check connections in LMP2011
+- Check real measurement range
+- Make reading with a mcu. Calibrate and control of the switches
 
 #### Issues
-- Problemas con el LMP2011
-- La ganancia de la etapa de low current debiese ser 187, no 19,7. Esto fue debido a que la resistencia de 10K es incorrecta, debiese ser de 1K.
-- Los switch de control de alimentación al MCU están mal conectados. Esto fue solucionado soldando un cable a las patas que lo controlan.
-- Agregar resistencias de pulldown a los controles de los switch como precaución en caso de no existir.
-- En la placa, hay nombres en la silkscreen cambiados.
-- Con respecto al laboratorio: muchos problemas de estática, ocurrieron muchos casos de descarga electroestática que producían oscilaciones en el circuito y que podrían dañar a IC. El osciloscopio tiene un problema, en cierto momento se detiene y debe ser reiniciado, al momento de reiniciarse el canal 1 siempre ponía impedancia de 50ohm e invertido, afectando la observación.
+- LMP2011 not working correctly
+- The gain in low current stage should be x197, not x19.7 10K resistance should be a 1K
+- Control switch for node supply are not connected well. This was fixed soldering directly from the inputs of the switch
+- Ad
+- VBAT and VADC silkscreen names are misplaced, they are switched.
+- There are no pull-down resistors in the control switch
 
-#### Qué se podría mejorar
-- Mejorar CMRR incrementando tolerancia de TODAS las resistencias, que sean de 0,1% o menos. También puede incrementarse aumentando la ganancia diferencial, pero esto afecta los rangos de medición.
-- Los micro USB ojalá que sean Thru-hole para evitar que se salgan.
-- Para el switch que entrega alimentación al MCU objetivo, unir los dos switch y así permitir más paso de corriente.
 
-#### Tips
-- Uso de pasta de soldar y pistola de calor es recomendable para componentes de tamaño muy reducido
-- Cautín de punta plana y malla de cobre con flux ayuda a remover exceso de estaño
-- USB thru-hole ojalá soldar con estaño de alto punto de fusión pues es más duro
-- Descarga a tierra puede hacerse con salida a tierra de los equipos
+#### To improve
+- CMRR by using higher tolerance resistor values, at least 0.1%. This can also be done by incrementing the stages gain, but this affects the current ranges
+- Change USB port from SMD to thru-hole to improve robustness in the pcb
+- Different configurations for the first stage should be considered
 
-## LMP2011 V2 (no prototipada)
 
-Esta versión debiese solucionar todos los issues presentados en la versión anterior.
-- Se quita el DC booster. Falta verificar que la alimentación sea correcta, quizás pueda volver a ocurrir el problema que surge en el MAX4239 con que las entradas no pueden estar a un valor tan cercano de la alimentación.
-- La ganancia de low current es solucionada cambiando la resistencia de 10K por 1K.
-- Los switch están bien conectados y reorganizados.
-- Se incluyen resistencias de pull-down en las lineas de control de los switch.
+## LMP2011 V2 - not manufactured
 
-La placa aún no se ha diseñado, sólo está el esquemático.
+This version of the board should solve the issues from the last version manufactured.
+
+* Remove DC booster (Check supply needed from the IC)
+* Low current gain is addressed by changing 10K resistors to 1K
+* Switch connection is fixed
+* Pull down resistors are included for the switches
+
+There is only the schematic for this board, not the board design yet
