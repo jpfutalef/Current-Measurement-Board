@@ -2,10 +2,10 @@
 
 MAX4239 is a auto-zero amplifier, with low input voltage offset of 1.0uV (typical) and 2uV (full temp range), it also has a high CMRR of 120dB (min), 140dB (typ).
 
-### Some notation
-* current measuring board (CMB): the designed circuit that measure shunt voltage, and supply voltage.
-* mcu: the microcontroller that is connect to the CMB, performs calibrations and converts the supply voltage and current measurements.
-* node: the target mcu which pwoer consumption the CMB is measuring.
+### Notations
+* Current Measuring Board (CMB): PCB with the designed circuit that can measure shunt voltage, and supply voltage.
+* mcu: microcontroller connected to the CMB, its performs calibrations and translate the supply voltage and current measurements.
+* Node: target mcu which power consumption the CMB is measuring.
 
 ### How to use
 
@@ -16,7 +16,7 @@ MAX4239 is a auto-zero amplifier, with low input voltage offset of 1.0uV (typica
 * if the targeted node supply source is connected to VBAT then the node can be powered by connecting it's power input to VMCU, if it's USB powered a jumper must be connected between 5V and VBAT on CMB.
 
 ### Ratings V2:
-- Power supply: 5V from USB
+- Power supply: 5V from USB port
 - Current range(ideal): ~1uA - 50mA
 - First stage gain x10
 - Second stage gain x197 for low currents and x1.51 for high currents.
@@ -43,11 +43,11 @@ These gains values adjust to the ADC input ranges. The 49.9 resistor are put in 
 
 ![ltc6241_gain_stage](images/IM5.png)
 
-4 analog switches (usually open are) used for calibration, this is done by measuring current flow threw resistors R9, R10, R13 and R14. TS5A23166DCUR switches where chosen because of the high voltage input range, high max current and low Ron (0.8 ohms).
+4 usually open analog switches are used for calibration in low current, this is done by measuring current flow threw resistors R9, R10, R13 and R14. TS5A23166DCUR switches where chosen for their high voltage input range, high max current and low Ron (0.8 ohms).
 
-A normally closed switch is connected between the target node and it's supply source. The TS5A23167DCUR wash chosen with similar characteristics as the TS5A23167DCUR.
+A normally closed switch is connected between the target node and it's supply source. The TS5A23167DCUR was chosen with similar characteristics as the TS5A23167DCUR.
 
-C1 is connected between the supply source and ground to stabilize it.
+C1 capacitor is connected between the supply source and ground to stabilize supply voltage from power source.
 
 ![switches](images/IM1.png)
 
