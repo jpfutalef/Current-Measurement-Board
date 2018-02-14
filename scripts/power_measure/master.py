@@ -1,3 +1,14 @@
+'''
+ * @{
+ *
+ * @file        main.c
+ * @brief       Test for RIOT's peripherial ADC intended to measure current across a shunt resistor.
+ *
+ * @author      Juan Pablo Futalef <juan.futalef@ing.uchile.cl>
+ *
+ * @}
+'''
+
 import serial
 
 ADC_POS_REF = 3.3       # Referencia voltaje positivo ADC

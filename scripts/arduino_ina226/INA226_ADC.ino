@@ -6,6 +6,17 @@
   It is assumed that INA226 doesn't have any shunt resistor connected to IN+ and IN- inputs.
 
   INA226 library by Korneliusz J.
+
+
+ * @{
+ *
+ * @file        main.c
+ * @brief       Test for RIOT's peripherial ADC intended to measure current across a shunt resistor.
+ *
+ * @author      Juan Pablo Futalef <juan.futalef@ing.uchile.cl>
+ *
+ * @}
+
 */
 
 #include <Wire.h>
